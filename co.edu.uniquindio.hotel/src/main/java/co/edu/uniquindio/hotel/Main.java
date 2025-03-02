@@ -90,9 +90,6 @@ public class Main {
         return subMenu;
     }
 
-    private static void opcionMenuPrincipal(int opcionSeleccionada) {
-    }
-
     private static String mensajeMenu() {
         String menu = "Menu principal\n" +
                 "1.Menu cliente\n" +
