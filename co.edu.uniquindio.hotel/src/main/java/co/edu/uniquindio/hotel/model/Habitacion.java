@@ -1,18 +1,19 @@
-package model;
+package co.edu.uniquindio.hotel.model;
 
 import java.util.ArrayList;
 
 public class Habitacion {
     private String numero;
-    private String tipoHabitacion;
+    private TipoHabitacion tipoHabitacion;
     private double precio;
     private Reserva reservaAsociada;
     private ArrayList<Servicio>listaServiciosAsociados;
 
-    public Habitacion(String numero, String tipoHabitacion, double precio){
+    public Habitacion(String numero, TipoHabitacion tipoHabitacion, double precio) {
         this.numero = numero;
         this.tipoHabitacion = tipoHabitacion;
         this.precio = precio;
+        this.listaServiciosAsociados = new ArrayList<>();
     }
 
     public String getNumero() {
@@ -21,6 +22,14 @@ public class Habitacion {
 
     public void setNumero(String numero) {
         this.numero = numero;
+    }
+
+    public TipoHabitacion getTipoHabitacion() {
+        return tipoHabitacion;
+    }
+
+    public void setTipoHabitacion(TipoHabitacion tipoHabitacion) {
+        this.tipoHabitacion = tipoHabitacion;
     }
 
     public double getPrecio() {
@@ -39,11 +48,14 @@ public class Habitacion {
         this.reservaAsociada = reservaAsociada;
     }
 
-    public String getTipoHabitacion() {
-        return tipoHabitacion;
+    public ArrayList<Servicio> getListaServiciosAsociados() {
+        return listaServiciosAsociados;
     }
 
-    public void setTipoHabitacion(String tipoHabitacion) {
-        this.tipoHabitacion = tipoHabitacion;
+    public void setListaServiciosAsociados(ArrayList<Servicio> listaServiciosAsociados) {
+        this.listaServiciosAsociados = listaServiciosAsociados;
     }
+
+    
+    
 }
