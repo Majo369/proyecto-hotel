@@ -12,6 +12,9 @@ public class Cliente {
         this.identificacion = identificacion;
     }
 
+    public Cliente() {
+    }
+
     public String getIdentificacion() {
         return identificacion;
     }
