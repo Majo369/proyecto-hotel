@@ -1,8 +1,10 @@
 package co.edu.uniquindio.hotel.model;
 
+import co.edu.uniquindio.hotel.Services.IClienteCrud;
+
 import java.util.ArrayList;
 
-public class EmpresaHotel {
+public class EmpresaHotel implements IClienteCrud {
     private String nombre;
     private ArrayList<Reserva> listaReservas=new ArrayList<>();
     private ArrayList<Habitacion>listaHabitaciones=new ArrayList<>();
@@ -52,4 +54,65 @@ public class EmpresaHotel {
     public void setListaClientes(ArrayList<Cliente> listaClientes) {
         this.listaClientes = listaClientes;
     }
+
+    private boolean clienteIsExist(Cliente cliente) {
+        for(Cliente cliente1:listaClientes){
+            if(cliente.getIdentificacion().equalsIgnoreCase(cliente1.getIdentificacion())){return true;}
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean agregarCliente(String nombre, String identificacion) {
+        boolean clienteExist=clienteExist(identificacion);
+        if(!clienteExist){
+            Cliente cliente=new Cliente(nombre,identificacion);
+            listaClientes.add(cliente);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean eliminarCliente(String identificacion) {
+        for(Cliente cliente:listaClientes){
+            if(cliente.getIdentificacion().equalsIgnoreCase(identificacion)){
+                listaClientes.remove(cliente);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override
+    public boolean actualizarCliente(String nombre, String identificacion) {
+        Cliente cliente=buscarCliente(identificacion);
+        if(cliente!=null){
+            cliente.setNombre(nombre);
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean clienteExist(String identificacion) {
+        for(Cliente cliente1:listaClientes){
+            if(cliente1.getIdentificacion().equalsIgnoreCase(identificacion)){return true;}
+        }
+
+        return false;
+    }
+
+    @Override
+    public Cliente buscarCliente(String identificacion){
+        for(Cliente cliente1:listaClientes){
+            if(cliente1.getIdentificacion().equalsIgnoreCase(identificacion)){return cliente1;}
+        }
+
+        return null;
+    }
 }
+
+
