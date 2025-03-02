@@ -46,6 +46,7 @@ public class ModelFactory implements IModelFactoryServices {
 
         return empresaHotel.actualizarCliente(nombreCliente,identificacionCliente);
     }
+    //hola
 
     @Override
     public Cliente buscarCliente(String identificacionCliente) {
