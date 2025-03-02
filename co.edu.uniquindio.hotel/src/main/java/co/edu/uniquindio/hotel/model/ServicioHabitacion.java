@@ -1,28 +1,35 @@
-package model;
+package co.edu.uniquindio.hotel.model;
 
 public class ServicioHabitacion extends Servicio {
-    private String servicioExtra;
-    private double precio;
+    
+    private Habitacion habitacionasociada;
+    private String Descipcion;
 
-    public ServicioHabitacion(boolean servicioSpa, boolean servicioRestaurante,
-                              boolean serviciosLimpieza, String servicioExtra, double precio) {
-        super(servicioSpa, servicioRestaurante, serviciosLimpieza);
-        this.servicioExtra = servicioExtra;
-        this.precio = precio;
-    }
-    public String getServicioExtra() {
-        return servicioExtra;
+    public ServicioHabitacion(String nombre, double precio, Habitacion habitacionasociada, String Descipcion) {
+        super(nombre, precio);
+        this.habitacionasociada = habitacionasociada;
+        this.Descipcion = Descipcion;
     }
 
-    public double getPrecio() {
-        return precio;
+    public Habitacion getHabitacionasociada() {
+        return habitacionasociada;
     }
 
-    public void setPrecio(double precio) {
-        this.precio = precio;
+    public void setHabitacionasociada(Habitacion habitacionasociada) {
+        this.habitacionasociada = habitacionasociada;
     }
 
-    public void setServicioExtra(String servicioExtra) {
-        this.servicioExtra = servicioExtra;
+    public String getDescipcion() {
+        return Descipcion;
     }
+
+    public void setDescipcion(String descipcion) {
+        Descipcion = descipcion;
+    }
+
+    
+
+
+
+    
 }

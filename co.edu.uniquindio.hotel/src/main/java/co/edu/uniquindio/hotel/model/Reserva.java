@@ -1,4 +1,4 @@
-package model;
+package co.edu.uniquindio.hotel.model;
 
 import java.time.LocalDate;
 

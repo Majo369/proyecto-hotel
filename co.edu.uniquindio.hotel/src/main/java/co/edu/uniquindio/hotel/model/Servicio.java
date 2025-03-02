@@ -1,46 +1,32 @@
-package model;
+package co.edu.uniquindio.hotel.model;
+
 
 public class Servicio {
-    private boolean servicioSpa;
-    private boolean servicioRestaurante;
-    private boolean serviciosLimpieza;
-    private Habitacion habitacionAsociado;
+    private String nombre;
+    private double precio;
 
-    public Servicio (boolean servicioSpa, boolean servicioRestaurante, boolean serviciosLimpieza){
-        this.servicioSpa = servicioSpa;
-        this.servicioRestaurante = servicioRestaurante;
-        this.serviciosLimpieza = serviciosLimpieza;
+    public Servicio(String nombre, double precio) {
+        this.nombre = nombre;
+        this.precio = precio;
     }
 
-    public Habitacion getHabitacionAsociado() {
-        return habitacionAsociado;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setHabitacionAsociado(Habitacion habitacionAsociado) {
-        this.habitacionAsociado = habitacionAsociado;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public boolean isServicioRestaurante() {
-        return servicioRestaurante;
+    public double getPrecio() {
+        return precio;
     }
 
-    public void setServicioRestaurante(boolean servicioRestaurante) {
-        this.servicioRestaurante = servicioRestaurante;
+    public void setPrecio(double precio) {
+        this.precio = precio;
     }
 
-    public boolean isServiciosLimpieza() {
-        return serviciosLimpieza;
-    }
+    
 
-    public void setServiciosLimpieza(boolean serviciosLimpieza) {
-        this.serviciosLimpieza = serviciosLimpieza;
-    }
-
-    public boolean isServicioSpa() {
-        return servicioSpa;
-    }
-
-    public void setServicioSpa(boolean servicioSpa) {
-        this.servicioSpa = servicioSpa;
-    }
+    
 }
